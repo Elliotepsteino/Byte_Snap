@@ -55,3 +55,9 @@ create_research_page = partial(
     create_notion_page, 
     parent_page_id="19590499489040a8986921399dd52068"
 )
+
+create_page = {
+    'EDUCATION': create_education_page,
+    'START-UP': create_startup_page,
+    'RESEARCH': create_research_page
+}

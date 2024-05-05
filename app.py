@@ -1,5 +1,6 @@
 from flask import Flask, request
 from summarize import SummarizeAgent
+from notion import *
 
 app = Flask(__name__)
 
@@ -15,6 +16,12 @@ def handle_post():
     out = summarize_agent.process(text_page)
     print('*** Successfully launched agent ***')
     title, summary, folder = out['title'], out['summary'], out['folder']
+
+    with open('notion_integration_token.key') as f:
+        integration_token = f.read()
+    
+    create_page[folder](integration_token, title=title, content=summary)
+
     return 'Success'
 
 if __name__ == '__main__':
