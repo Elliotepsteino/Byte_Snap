@@ -3,7 +3,7 @@
     "name": "Text Saver",
     "version": "1.0",
     "description": "A browser extension to save text from web pages.",
-    "permissions": ["activeTab"],
+    "permissions": ["activeTab","scripting"],
     "action": {
       "default_popup": "popup.html",
       "default_icon": {
