@@ -16,3 +16,11 @@ body {
     cursor: pointer;
     border-radius: 4px;
 }
+
+#saveButton:hover {
+    background-color: #45a049; /* Darker shade of green on hover */
+}
+
+#saveButton:active {
+    background-color: #3e8e41; /* Even darker shade of green on click */
+}
