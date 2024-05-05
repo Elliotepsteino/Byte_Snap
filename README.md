@@ -16,10 +16,11 @@ python app.py
 ```
 3. Add openai api key to openai_api.key.
 
-4. Set up Notion API:
-```
-TODO
-```
-5. Acitvate the extension in your browser.
-Go to your extension, click manage extensions, and load the unpacked extension from the Byte_Snap directory.
+4. Add notion integration key to notion_integration_token.key
+You can create a new integration key at https://www.notion.com/my-integrations.
+5. Create notion pages for Education, Startup, and Research:
+After these pages are created, give access to the integration key to these pages (important) and copy the page id (the last part of the url) to the respective variables in the notion.py file.
+
+6. Acitvate the extension in your browser.
+Go to your extension, click manage extensions, and load the unpacked extension from the byte_snap_extension directory.
 
