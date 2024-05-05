@@ -41,17 +41,17 @@ def create_notion_page(token, parent_page_id, title, content):
     response = requests.post(url, headers=headers, json=data)
     return response.json()
 
-create_classes_page = partial(
+create_education_page = partial(
     create_notion_page, 
     parent_page_id="c4d447fee57c416ab1975f836114128f"
 )
 
-create_research_page = partial(
+create_startup_page = partial(
     create_notion_page, 
     parent_page_id="9c22bc842d8d40d19f550f5a658d791d"
 )
 
-create_startup_page = partial(
+create_research_page = partial(
     create_notion_page, 
     parent_page_id="19590499489040a8986921399dd52068"
 )
