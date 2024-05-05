@@ -7,15 +7,14 @@ summarize_agent = SummarizeAgent()
 
 @app.route('/', methods=['POST'])
 def handle_post():
-    data = request.get_json()
-    text_page = data['text']
+    data = request.get_json(force=True)
+    print(data)
+    text_page, url = data['text'], data['url']
     print('*** Successfully received text_page ***')
 
     out = summarize_agent.process(text_page)
     print('*** Successfully launched agent ***')
-    for key, value in out.items():
-        print(f'{key}: {value}')
-    # Process the POST request data
+    title, summary, folder = out['title'], out['summary'], out['folder']
     return 'Success'
 
 if __name__ == '__main__':
