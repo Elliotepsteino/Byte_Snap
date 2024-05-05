@@ -23,14 +23,17 @@ class SummarizeAgent():
         self.model = 'gpt-3.5-turbo'
 
     def create_title(self, text_page):
+        print('Creating title...')
         title = self.gpt_agent.prompt(text_page, model=self.model, system=self.system_prompt_title)
         return title
 
     def summarize(self, text_page):
+        print('Summarizing...')
         summary = self.gpt_agent.prompt(text_page, model=self.model, system=self.system_prompt_summary)
         return summary
 
     def detect_folder(self, summary):
+        print('Detecting folder...')
         folder = self.gpt_agent.prompt(summary, model=self.model, system=self.system_prompt_folder)
         if folder not in self.folders: folder = self.folders[0]
         return folder
